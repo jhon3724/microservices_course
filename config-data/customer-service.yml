@@ -1,0 +1,38 @@
+
+#Application Configuration
+server:
+  port: 8092
+  error:
+    include-message: always
+
+# To See H2 Console in Browser:
+# http://localhost:8091/h2-console
+# Enabling H2 Console
+spring:
+  # ===============================
+  # DB
+  # ===============================
+  datasource:
+    url: jdbc:mysql://localhost:3306/microservices_spring
+    driverClassName: com.mysql.cj.jdbc.Driver
+    username: root
+    password: '*T3nn1s1976.*'
+
+  # ===============================
+  # JPA / HIBERNATE
+  # ===============================
+  jpa:
+    database: mysql
+    show-sql: true
+    generate-ddl: true
+    hibernate:
+      ddl-auto: none
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    properties:
+      hibernate:
+        show_sql: true
+        use_sql_comments: false
+        format_sql: false
+logging:
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} ${LOG_LEVEL_PATTERN:-%5p} %m%n"
