@@ -1,11 +1,14 @@
 server:
   port: 8081
+  error:
+    include-message: always
 
 spring:
   cloud:
     config:
       server:
         git:
+          default-label: main
           uri: https://github.com/jhon3724/microservices_course.git
           searchPaths: config-data
           username: ${GIT_USER}
