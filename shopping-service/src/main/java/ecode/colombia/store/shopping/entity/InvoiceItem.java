@@ -1,5 +1,6 @@
 package ecode.colombia.store.shopping.entity;
 
+import ecode.colombia.store.shopping.model.Product;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -24,6 +25,9 @@ public class InvoiceItem {
 
     @Transient
     private Double subtotal;
+
+    @Transient
+    private Product product;
 
     public Double getSubtotal(){
         if(this.price > 0 && this.quantity > 0){
